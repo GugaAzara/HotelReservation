@@ -1,0 +1,53 @@
+﻿
+<link rel="stylesheet" href="~/css/Costumers.css" asp-append-version="true" />
+
+
+<body>
+	<article>
+		<h1>Customers</h1>
+		<div class="input_with_buttons">
+
+			<form asp-action="GetCustomers" method="get" class="input-group">
+				<input name="word" type="text" class="form-control" placeholder="Search" aria-label="Recipient's username with two button addons">
+				<button class="btn btn-outline-secondary" type="submit">Search</button>
+				<a class="btn btn-outline-secondary second-button" asp-controller="Costumer" asp-action="GetCostumers">Back To List</a>
+			</form>
+
+
+			<div class="create-costumer">
+				<a asp-controller="Customer" asp-action = "Create" class="btn btn-primary">
+					Add Customer
+				</a>
+			</div>
+		</div>
+
+		<div class="table-section"> 
+			<table class="table bg-danger table-info table-hover table-striped table-bordered">
+				<thead class="table-dark">
+					<tr>
+						<th scope="col">FullName</th>
+						<th scope="col">Email</th>
+						<th scope="col">Phone</th>
+						<th scope="col">Etnicity</th>
+						<th scope="col">Date of Birth</th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody class="data table-light">
+					@foreach (var obj in Model)
+					{
+						<tr class="table-row">
+							<td>@obj.FullName</td>
+							<td>@obj.Email</td>
+							<td>@obj.Phone</td>
+							<td>@obj.Etnicity</td>
+							<td>@obj.DateOfBirth</td>
+							<td><a asp-controller="Customer" asp-action = "Edit" asp-route-id ="@obj.Id" class="btn btn-primary">Edit</a></td>
+						</tr>	
+					}					
+				</tbody>
+			</table>
+		</div>
+
+	</article>
+</body>

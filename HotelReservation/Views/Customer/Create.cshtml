@@ -1,0 +1,33 @@
+﻿@model CustomerModel
+<link rel="stylesheet" href="~/css/Costumers.css" asp-append-version="true" />
+
+<form method="post" class="popup-form" id="createForm">
+    <div class="border p-3 mt-4 popup-form-div">
+        <div class="row pb-2">
+            <h2 class ="text-primary">Add Customer</h2>
+        </div>
+        <div class="mb-3">
+            <label  asp-for="FullName"></label>
+            <input asp-for="FullName" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label asp-for="Phone"></label>
+            <input asp-for="Phone" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label asp-for="Etnicity"></label>
+            <input asp-for="Etnicity" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label asp-for="DateOfBirth"></label>
+            <input asp-for="DateOfBirth" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width:150px">Add</button>
+        <a  asp-controller="Customer" asp-action="GetCustomers" class="btn btn-secondary" style="width:150px">Back To List</a>
+    </div>
+</form>

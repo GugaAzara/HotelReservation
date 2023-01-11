@@ -1,0 +1,141 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+h1 {
+    color: black;
+    font-size: 100px;
+    text-align: center;
+}
+
+article {
+    height: auto;
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+article .btn {
+    height: 45px;
+    text-align: center;
+}
+
+
+
+.input_with_buttons {
+    width: 90%;
+    height: 120px;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.input-group {
+    width: 55%;
+}
+
+.form-control {
+    width: 580px;
+}
+
+.input-group button {
+    width: 140px;
+}
+
+
+.input-group a {
+    width: 140px;
+    text-decoration: none;
+    padding: 9px 12px;
+}
+
+.create-costumer {
+    width: 240px;
+}
+
+.create-costumer .btn {
+    width: 240px;
+    font-size: 20px;
+}
+
+
+.table-section {
+    margin: auto;
+    margin-top: 50px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+article .table {
+    width: 100%;
+}
+
+.table th {
+    width: 220px;
+}
+
+.table th:last-child {
+    width: 120px;
+}
+
+.table td:last-child a:first-child {
+    height: 40px;
+    width: 70px;
+    font-size: 17px;
+}
+
+.table td:last-child a:last-child {
+    height: 40px;
+    width: 100px;
+    font-size: 17px;
+}
+
+
+/*------------Add Customer-----------*/
+
+.popup-form {
+    width: 550px;
+    height: 620px;
+    margin: auto;
+    border-radius: 15px;
+    
+}
+
+.popup-form-div {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.pb-2 h2 {
+    margin-left: 15px;
+    margin: 0;
+}
+
+  
+
+.mb-3 {
+    margin-top: 10px;
+}
+
+    .mb-3 input {
+        height: 45px;
+        width: 510px;
+    }
+
+.popup-form-div button {
+    margin-top: 15px;
+}
+
+.popup-form-div a {
+    margin-top: 15px;
+}
