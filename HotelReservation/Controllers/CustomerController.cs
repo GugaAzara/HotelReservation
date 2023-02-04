@@ -7,9 +7,9 @@ namespace HotelReservation.Controllers
 {
 	public class CustomerController : Controller
 	{
-		public readonly ICostumerService _customerService;
+		public readonly ICustomerService _customerService;
 
-		public CustomerController(ICostumerService costumerService)
+		public CustomerController(ICustomerService costumerService)
 		{
 			_customerService = costumerService;
 		}
@@ -18,6 +18,12 @@ namespace HotelReservation.Controllers
 		{
 			var AllCostumers = _customerService.GetCustomers();
 			return View(AllCostumers);
+		}
+		
+		public IActionResult SearchCustomerByName(string name)
+		{
+			var searchedCustomers = _customerService.SearchCustomerByName(name);
+			return View("GetCustomers", searchedCustomers);
 		}
 
 		public IActionResult Create()

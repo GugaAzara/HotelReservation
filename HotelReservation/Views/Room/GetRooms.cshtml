@@ -1,0 +1,52 @@
+﻿
+
+<link rel="stylesheet" href="~/css/PageDesignes.css" asp-append-version="true" />
+
+
+
+<body>
+	<article class="Room">
+		<h1>Rooms</h1>
+		<div class="input_with_buttons">
+
+			<form asp-action="GetRoomsByNumber" method="get" class="input-group">
+				<input name="name" type="text" class="form-control" placeholder="Search">
+				<button class="btn btn-outline-secondary" type="submit">Search</button>
+				<a class="btn btn-outline-secondary second-button" asp-controller="Room" asp-action="GetRooms">Back To List</a>
+			</form>
+
+			<div class="create">
+				<a asp-controller="Room" asp-action = "Create" class="btn btn-primary">
+					Add Rooms	
+				</a>
+			</div>
+		</div>
+
+		<div class="table-section"> 
+			<table class="table bg-danger table-info table-hover table-striped table-bordered">
+				<thead class="table-dark">
+					<tr>
+						<th scope="col">Room Number</th>
+						<th scope="col">Category</th>
+						<th scope="col">Bed</th>
+						<th scope="col">Status</th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody class="data table-light">
+					@foreach (var obj in Model)
+					{
+						<tr class="table-row">
+							<td>@obj.RoomNumber</td>
+							<td>@obj.Category</td>
+							<td>@obj.Bed</td>
+							<td>@obj.Status</td>
+							<td><a asp-controller="Room" asp-action = "Edit" asp-route-id ="@obj.Id" class="btn btn-primary">Edit</a></td>
+						</tr>	
+					}					
+				</tbody>
+			</table>
+		</div>
+
+	</article>
+</body>

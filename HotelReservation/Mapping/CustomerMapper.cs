@@ -5,7 +5,7 @@ using HotelReservation.Models;
 
 namespace HotelReservation.Mapping
 {
-	public class CustomerMapper : IMapper<Customer, CustomerModel>
+	public class CustomerMapper : ICustomerMapper<Customer, CustomerModel>
 	{
 		public Customer MapFromModelToEntity(CustomerModel model)
 		{
@@ -15,7 +15,7 @@ namespace HotelReservation.Mapping
 			customer.Email= model.Email;
 			customer.Phone= model.Phone;
 			customer.Etnicity= model.Etnicity;
-			customer.DateOfBirth= model.DateOfBirth;
+			customer.DateOfBirth = model.DateOfBirth;
 
 			return customer;
 		}

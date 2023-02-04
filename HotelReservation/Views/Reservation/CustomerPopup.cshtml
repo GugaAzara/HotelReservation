@@ -1,0 +1,40 @@
+﻿
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<link rel="stylesheet" href="~/css/CustomerPopup.css" asp-append-version="true" />
+
+
+@*<div class="modal customer-popup" id = "customer-popup">*@
+    @*<a href="#" class="close" data-dismiss="modal">&times;</a>*@
+    <div class="add-search">
+        <button type="button" class="btn btn-info">Add Customer</button>
+        <form asp-action="GetCustomers">
+        <input type="text" class="form-control" placeholder="Search Customer">
+        </form>
+    </div>
+    <div class="customer-table">
+        <table class="table table-hover table-striped">
+            <thead class="table-info">
+                <tr>
+                    <th scope="col">FullName</th>
+                    <th scope="col">Etnicity</th>
+                    <th scope="col">Date of Birth</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody class="data">
+                @foreach (var obj in Model)
+                {
+                    <tr class="table-row table-light">
+                        <td>@obj.FullName</td>
+                        <td>@obj.Etnicity</td>
+                        <td>@obj.DateOfBirth.ToString("MM/dd/yyyy")</td>
+                        <td><a asp-controller="Customer" asp-action = "Edit" asp-route-id ="@obj.Id" class="btn btn-info">Edit</a></td>
+                    </tr>	
+                }					
+            </tbody>
+        </table>
+    </div>
+@*</div>*@

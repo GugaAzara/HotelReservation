@@ -1,4 +1,6 @@
 ﻿using HotelReservation.Enums;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HotelReservation.Entities
 {
@@ -11,5 +13,7 @@ namespace HotelReservation.Entities
 		public Room Room { get; set; }
 		public DateTime From { get; set; }
 		public DateTime To { get; set; }
+		public int Price { get; set; }
+		
 	}
 }

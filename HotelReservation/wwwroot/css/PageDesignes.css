@@ -3,8 +3,11 @@ body {
     padding: 0px;
 }
 
+.pb-3 {
+    min-height: 785px;
+}
 
-
+/*----------------------------Pages Share Design-------------------------------*/
 h1 {
     color: black;
     font-size: 100px;
@@ -55,11 +58,11 @@ article .btn {
     padding: 9px 12px;
 }
 
-.create-costumer {
+.create {
     width: 240px;
 }
 
-.create-costumer .btn {
+.create .btn {
     width: 240px;
     font-size: 20px;
 }
@@ -99,6 +102,19 @@ article .table {
 }
 
 
+/*----------------------------Room Page Design-------------------------------*/
+
+.Room {
+    width: 80%;
+}
+
+/*----------------------------Reservation Page Design--------------------------*/
+
+.Reservations {
+    width: 90%;
+}
+
+
 /*------------Add Customer-----------*/
 
 .popup-form {
@@ -127,10 +143,10 @@ article .table {
     margin-top: 10px;
 }
 
-    .mb-3 input {
-        height: 45px;
-        width: 510px;
-    }
+.mb-3 input {
+    height: 45px;
+    width: 510px;
+}
 
 .popup-form-div button {
     margin-top: 15px;
@@ -139,3 +155,26 @@ article .table {
 .popup-form-div a {
     margin-top: 15px;
 }
+
+
+
+
+.footer[b-44whd80hbb] {
+    
+    position: relative;
+}
+
+
+
+/*------------Add Room-----------*/
+
+.mb-3 select {
+    height: 45px;
+    width: 510px;
+}
+
+.room-form {
+    height: 500px;
+}
+
+

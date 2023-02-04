@@ -1,5 +1,5 @@
 ﻿
-<link rel="stylesheet" href="~/css/Costumers.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/PageDesignes.css" asp-append-version="true" />
 
 
 <body>
@@ -7,14 +7,17 @@
 		<h1>Customers</h1>
 		<div class="input_with_buttons">
 
-			<form asp-action="GetCustomers" method="get" class="input-group">
-				<input name="word" type="text" class="form-control" placeholder="Search" aria-label="Recipient's username with two button addons">
+			<form asp-action="SearchCustomerByName" method="get" class="input-group">
+				<input name="name" type="text" class="form-control" placeholder="Search">
 				<button class="btn btn-outline-secondary" type="submit">Search</button>
-				<a class="btn btn-outline-secondary second-button" asp-controller="Costumer" asp-action="GetCostumers">Back To List</a>
+				<a class="btn btn-outline-secondary second-button" 
+				asp-controller="Customer" 
+				asp-action="GetCustomers">Back To List
+				</a>
 			</form>
 
 
-			<div class="create-costumer">
+			<div class="create">
 				<a asp-controller="Customer" asp-action = "Create" class="btn btn-primary">
 					Add Customer
 				</a>
@@ -22,7 +25,7 @@
 		</div>
 
 		<div class="table-section"> 
-			<table class="table bg-danger table-info table-hover table-striped table-bordered">
+			<table class="table bg-danger table-hover table-striped table-bordered">
 				<thead class="table-dark">
 					<tr>
 						<th scope="col">FullName</th>
@@ -41,7 +44,7 @@
 							<td>@obj.Email</td>
 							<td>@obj.Phone</td>
 							<td>@obj.Etnicity</td>
-							<td>@obj.DateOfBirth</td>
+							<td>@obj.DateOfBirth.ToString("MM/dd/yyyy")</td>
 							<td><a asp-controller="Customer" asp-action = "Edit" asp-route-id ="@obj.Id" class="btn btn-primary">Edit</a></td>
 						</tr>	
 					}					

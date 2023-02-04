@@ -20,7 +20,9 @@ builder.Services.AddDefaultIdentity<HotelReservationUser>(options => options.Sig
 builder.Services.AddControllersWithViews();
 
 // Connect Services to Interfaces
-builder.Services.AddScoped<ICostumerService, CustomerService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IRoomService, RoomService>();
+builder.Services.AddScoped<IReservationService, ReservationService>();
 
 
 
@@ -45,6 +47,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
 	name: "default",
-	pattern: "{controller=Reservation}/{action=Index}/{id?}");
+	pattern: "{controller=Reservation}/{action=GetReservations}/{id?}");
 
 app.Run();

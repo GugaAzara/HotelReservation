@@ -8,10 +8,10 @@ using System.Runtime.Intrinsics.Arm;
 
 namespace HotelReservation.Services
 {
-	public class CustomerService : ICostumerService
+	public class CustomerService : ICustomerService
 	{
 		public readonly HotelReservationContext _context;
-		public readonly IMapper<Customer, CustomerModel> _customermapper;
+		public readonly ICustomerMapper<Customer, CustomerModel> _customermapper;
 
 		public CustomerService(HotelReservationContext context)
 		{
@@ -22,20 +22,33 @@ namespace HotelReservation.Services
 		public IEnumerable<Customer> GetCustomers()
 		{
 			return _context.Customers;
+			/*if(name == null)
+			{
+				return _context.Customers;
+			}
+			else
+			{
+				return _context.Customers.Where(c => c.FullName.Contains(name));
+			}*/
 		}
 		
+		public IEnumerable<Customer> SearchCustomerByName(string name)
+		{
+            return _context.Customers.Where(c => c.FullName.Contains(name));
+        }
+
 		public CustomerModel GetCustomer(int id)
 		{
-			var CustomerToGet = _context.Customers.Find(id);
-			if (CustomerToGet == null)
-			{
-				throw new DbUpdateException($"Category with id {id} doesn't exist.");
-			}
+            var customer = _context.Customers.Find(id);
+            if (customer == null)
+            {
+                throw new DbUpdateException("Customer doesn't exist");
+            }
 
-			var convertedEntity = _customermapper.MapFromEntityToModel(CustomerToGet);
+            var convertedEntity = _customermapper.MapFromEntityToModel(customer);
+            return convertedEntity;
+        }
 
-			return convertedEntity;
-		}
 
 		public CustomerModel CreateCustomer(CustomerModel customer)
 		{

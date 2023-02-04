@@ -1,0 +1,41 @@
+﻿@using HotelReservation.Enums;
+@model RoomModel
+
+<link rel="stylesheet" href="~/css/PageDesignes.css" asp-append-version="true" />
+
+
+<form method="post" class="popup-form room-form">
+    <input asp-for="Id" hidden />
+    <div class="border p-3 mt-4 popup-form-div">
+        <div class="row pb-2">
+            <h2 class ="text-primary">Add Room</h2>
+        </div>
+        <div class="mb-3">
+            <label  asp-for="RoomNumber"></label>
+            <input asp-for="RoomNumber" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label asp-for="Category"></label>
+            <select asp-for="Category" class="form-control" asp-items="Html.GetEnumSelectList<RoomCategory>()">
+                <option></option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Bed"></label>
+            <select asp-for="Bed" class="form-control" asp-items="Html.GetEnumSelectList<BedFormation>()">
+                <option></option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Status"></label>
+            <select asp-for="Status" class="form-control" asp-items="Html.GetEnumSelectList<Status>()">
+                <option></option>
+            </select>
+        </div>
+        
+
+        <button asp-controller="Room" asp-action="Update" type="submit" class="btn btn-primary" value="Edit" name="action:Edit" style="width:167px" >Update</button>
+        <button asp-controller="Room" asp-action="Delete" type="submit" class="btn btn-danger" value="Delete" name="action:Delete" style="width:167px" >Delete</button>
+        <a  asp-controller="Room" asp-action="GetRooms" class="btn btn-secondary" style="width:167px">Back To List</a>
+    </div>
+</form>

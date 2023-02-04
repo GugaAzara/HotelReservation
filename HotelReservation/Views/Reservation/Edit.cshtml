@@ -1,0 +1,57 @@
+﻿@model ReservationModel
+<link rel="stylesheet" href="~/css/ReservationDesign.css" asp-append-version="true" />
+
+<form method="post" class="popup-form">
+    <!-- <input asp-for="Id" hidden /> -->
+    <div class="border p-3 mt-4 popup-form-div">
+    <div class="row pb-2">
+        <h2 class ="text-primary">Make Reservation</h2>
+    </div>
+    <div class="mb-3 id-place">
+        <label  asp-for="Id"></label>
+        <input asp-for="Id" disabled class="form-control">
+    </div>
+    <div class="input-group mb-3 input-group-customer">
+        <select asp-for="SelectedCustomerId" class="form-control" asp-items="ViewBag.NewReservationModel.CustomerSelectList">
+                <option></option>
+        </select>
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" onclick="ShowPopup()">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="date-input-group">
+        <div class="mb-3">
+            <label asp-for="From"></label>
+            <input asp-for="From" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label asp-for="To"></label>
+            <input asp-for="To" class="form-control">
+        </div>
+    </div>
+
+    <div class="room-price-group">
+        <div class="mb-3 input-room">
+            <label  asp-for="SelectedRoomId"></label>
+            <select asp-for="SelectedRoomId" class="form-control" asp-items="ViewBag.NewReservationModel.RoomSelectList">
+                <option></option>
+        </select>
+        </div>
+        <div class="mb-3 input-price">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" type="text" class="form-control">
+        </div>
+    </div>
+
+    <div class="buttons-group">
+        <button asp-controller="Reservation" asp-action="Update" type="submit" class="btn btn-primary" value="Edit" name="action:Edit" >Update</button>
+        <button asp-controller="Reservation" asp-action="Delete" type="submit" class="btn btn-danger" value="Delete" name="action:Delete" >Delete</button>
+        <a asp-controller="Reservation" asp-action="GetReservations" class="btn btn-secondary" >Back To List</a>
+    </div>
+
+    </div>
+</form>

@@ -1,0 +1,54 @@
+﻿
+
+<link rel="stylesheet" href="~/css/PageDesignes.css" asp-append-version="true" />
+
+<body>
+	<article class="Reservations">
+		<h1>Reservations</h1>
+		<div class="input_with_buttons">
+
+			<form asp-action="GetReservations" method="get" class="input-group">
+				<input name="name" type="text" class="form-control" placeholder="Search">
+				<button class="btn btn-outline-secondary" type="submit">Search</button>
+				<a class="btn btn-outline-secondary second-button" asp-controller="Room" asp-action="GetRooms">Back To List</a>
+			</form>
+
+
+			<div class="create">
+				<a asp-controller="Reservation" asp-action = "Create" class="btn btn-primary">
+					Make Reservation				
+				</a>
+			</div>
+		</div>
+
+		<div class="table-section"> 
+			<table class="table bg-danger table-info table-hover table-striped table-bordered">
+				<thead class="table-dark">
+					<tr>
+						<th scope="col">Reservation Id</th>
+						<th scope="col">Customer</th>
+						<th scope="col">Room</th>
+						<th scope="col">From</th>
+						<th scope="col">To</th>
+						<th scope="col">Price</th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody class="data table-light">
+					@foreach (var obj in Model)
+					{
+						<tr class="table-row">
+							<td>@obj.Id</td>
+							<td>@obj.CustomerId</td>
+							<td>@obj.RoomId</td>
+							<td>@obj.From</td>
+							<td>@obj.To</td>
+							<td>@obj.Price</td>
+							<td><a asp-controller="Reservation" asp-action = "Edit" asp-route-id ="@obj.Id" class="btn btn-primary">Edit</a></td>
+						</tr>	
+					}					
+				</tbody>
+			</table>
+		</div>
+	</article>
+</body>

@@ -1,0 +1,144 @@
+﻿.popup-form {
+    width: 500px;
+    height: 550px;
+    margin: auto;
+}
+
+.popup-form-div {
+    width: 100%;
+    height: 100%;
+    border: 1px black solid;
+    border-radius: 15px;
+}
+
+.pb-2 h2 {
+    margin-left: 15px;
+}
+
+.mb-3 {
+    height: 80px;
+    margin-bottom: 0 !important;
+}
+
+
+
+.mb-3 input {
+    height: 45px;
+    width: 510px;
+}
+
+.popup-form-div .id-place {
+    border-bottom: 1px gray solid;
+}
+
+.popup-form-div .id-place input {
+    width: 150px;
+}
+
+/* ------------------- Customer and Room Input ----------------- */
+.input-group {
+    height: 45px;
+}
+
+.input-group button {
+    
+    width: 45px;
+    padding: 7px;
+    z-index: 0!important;
+}
+
+.input-group a svg {
+    height: 30px;
+    width: 30px;
+}
+
+
+
+.input-group-customer {
+    margin-top: 30px;
+}
+
+/*.select-customer {
+    height: 55px;
+}
+
+.select-customer select {
+    height: 45px;
+}
+*/
+
+
+
+
+/* -------------------------- Date Input ----------------- */
+.date-input-group {
+    height: 90px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.date-input-group div {
+    height: 45px;
+    width: 46%;
+}
+
+.date-input-group div input {
+    height: 100%;
+    width: 100%;
+}
+
+/* -------------------------- Room and Price Input ---------------- */
+.room-price-group {
+    height: 90px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.room-price-group div {
+    height: 45px;
+    width: 46%;
+}
+
+.room-price-group div input {
+    height: 100%;
+    width: 100%;
+}
+
+/* -------------------------- Buttons ---------------------- */
+
+.buttons-group {
+    height: 40px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons-group a {
+    color: white !important;
+}
+
+.buttons-group .btn {
+    width: 145px;
+}
+
+/*-----------------------------(Create Form)-------------------*/
+.create-button-group {
+    height: 40px;
+    width: 65%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/*----------------------------- PopupPartial -----------------*/
+
+
+
+
+
