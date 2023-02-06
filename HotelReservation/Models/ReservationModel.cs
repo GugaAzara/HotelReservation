@@ -22,7 +22,6 @@ namespace HotelReservation.Models
 
 		/*Dropdown For Rooms*/
 		[DisplayName("Room")]
-		
 		public string SelectedRoomId { get; set; }
 		public List<SelectListItem>? RoomSelectList { get; set; }
 

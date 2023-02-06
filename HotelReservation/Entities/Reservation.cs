@@ -14,6 +14,5 @@ namespace HotelReservation.Entities
 		public DateTime From { get; set; }
 		public DateTime To { get; set; }
 		public int Price { get; set; }
-		
 	}
 }

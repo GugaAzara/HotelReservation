@@ -9,7 +9,7 @@
     </div>
     <div class="mb-3 id-place">
         <label  asp-for="Id"></label>
-        <input asp-for="Id" disabled class="form-control">
+        <input asp-for="Id" readonly="readonly" class="form-control">
     </div>
     <div class="input-group mb-3 input-group-customer">
         <select asp-for="SelectedCustomerId" class="form-control" asp-items="ViewBag.NewReservationModel.CustomerSelectList">

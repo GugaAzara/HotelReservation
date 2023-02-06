@@ -35,18 +35,18 @@
 					</tr>
 				</thead>
 				<tbody class="data table-light">
-					@foreach (var obj in Model)
+					@foreach (var row in Model)
 					{
 						<tr class="table-row">
-							<td>@obj.Id</td>
-							<td>@obj.CustomerId</td>
-							<td>@obj.RoomId</td>
-							<td>@obj.From</td>
-							<td>@obj.To</td>
-							<td>@obj.Price</td>
-							<td><a asp-controller="Reservation" asp-action = "Edit" asp-route-id ="@obj.Id" class="btn btn-primary">Edit</a></td>
+							<td>@row.Id</td>
+							<td>@row.CustomerId</td>
+							<td>@row.RoomId</td>
+							<td>@row.From</td>
+							<td>@row.To</td>
+							<td>@row.Price</td>
+							<td><a asp-controller="Reservation" asp-action = "Edit" asp-route-id ="@row.Id" class="btn btn-primary">Edit</a></td>
 						</tr>	
-					}					
+					}		
 				</tbody>
 			</table>
 		</div>

@@ -55,8 +55,9 @@ namespace HotelReservation.Services
 
             reservation.CustomerId = CustomerId;
             reservation.RoomId = RoomId;
-            reservation.Customer = customer;
             reservation.Room = room;
+            reservation.Customer = customer;
+            
 
             var convertedModel = _reservationMapper.MapFromModelToEntity(reservation);
 
